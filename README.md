@@ -2,7 +2,7 @@
 
 These are [Ansible](http://docs.ansible.com/ansible/) playbooks (scripts) for managing an [Odoo](https://github.com/odoo/odoo) server.
 
-You can create a local container instance with LXC using the lxc/lxc-create.sh script.
+You can create a local container instance with LXC using the `lxc/lxc-create.sh` script.
 Run:
 
 `./lxc/lxc-create.sh -n odoo-dev -t ubuntu -r xenial -h local.ofn.org`
@@ -19,7 +19,7 @@ These playbooks will install the PostgreSQL database and Python virtualenv to ma
 
 It has currently been tested on **Ubuntu 16.04 Xenial (64 bit)**.
 
-If you like run the lxc-create script, you need install [LXC](https://linuxcontainers.org/).
+If you like run the `lxc-create` script, you need install [LXC](https://linuxcontainers.org/).
 
 ## Using LXC containers
 
