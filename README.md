@@ -24,7 +24,7 @@ If you like run the lxc-create script, you need install [LXC](https://linuxconta
 ## Using LXC containers
 
 You can need a local container to test your customizations.
-The script `lxc/lxc-create.sh` create a container, get his IP address and create a known host whit this IP address.
+`lxc/lxc-create.sh` script creates a container, gets IP address of the new container and creates a known host whit this IP address.
 
 `./lxc/lxc-create.sh -n NAME -t TEMPLATE -r RELEASE -h HOST`
 
