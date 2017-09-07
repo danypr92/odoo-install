@@ -1,0 +1,33 @@
+---
+- name: Install virtualenv
+  apt:
+    pkg=virtualenv
+    state=present
+  become: yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version != '14.04'
+
+- name: Install virtualenv (Trusty)
+  apt:
+    pkg=python-virtualenv
+    state=present
+  become: yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '14.04'
+
+- name: Check if virtualenv is already created
+  stat:
+    path: "{{ ansible_env.HOME }}/odoo-env"
+  register: env
+
+- name: Manually create the initial virtualenv
+  command: virtualenv "{{ ansible_env.HOME }}/odoo-env" creates="{{ ansible_env.HOME }}/.odoo-env"
+  when: env.stat.isdir is undefined
+#    and ansible_distribution == 'Ubuntu' and ansible_distribution_version != '14.04'
+#
+# - name: Manually create the initial virtualenv (Trusty)
+#   command: python-virtualenv "{{ ansible_env.HOME }}/odoo-env" creates="{{ ansible_env.HOME }}/.odoo-env"
+#   when: env.stat.isdir is undefined and ansible_distribution == 'Ubuntu' and ansible_distribution_version == '14.04'
+
+- name: Install pip requirements.txt
+  pip:
+    requirements: "{{ ansible_env.HOME }}/odoo/requirements.txt"
+    virtualenv: "{{ ansible_env.HOME }}/odoo-env"

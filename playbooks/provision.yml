@@ -1,0 +1,23 @@
+---
+- name: provision
+  hosts: odoo_servers
+  remote_user: "{{ user }}"
+
+  vars:
+    example: example
+
+  roles:
+    - role: common
+      tags: common
+
+    # Need install postgresql, then create a postgres user named like your login
+    - role: dbserver
+      tags: dbserver
+
+    # Install npm and less CSS
+    - role: npm
+      tags: npm
+
+    # # Python dependencies listed in the requirements.txt file
+    - role: pythonenv
+      tags: pythonenv

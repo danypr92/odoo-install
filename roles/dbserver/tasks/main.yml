@@ -1,0 +1,18 @@
+---
+- name: install postgres packages
+  apt:
+    pkg={{ item }}
+    state=present
+  become: yes
+  with_items:
+    - postgresql
+    - postgresql-client
+    - postgresql-contrib
+    - python-psycopg2   # Needed by Ansible to ejecute Postgres tasks
+
+- name: create db user
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name={{ user }}
+    role_attr_flags=CREATEDB
