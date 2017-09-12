@@ -12,6 +12,7 @@
   become: yes
   npm:
     name: less
+    version: 2.7.2
     global: yes
 
 - name: create node sym link
