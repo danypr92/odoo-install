@@ -11,8 +11,9 @@
       tags: common
 
     # Need install postgresql, then create a postgres user named like your login
-    - role: dbserver
-      tags: dbserver
+    - role: geerlingguy.postgresql
+      become: yes
+      tags: postgresql
 
     # Install npm and less CSS
     - role: npm
