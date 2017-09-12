@@ -3,9 +3,6 @@
   hosts: odoo_servers
   remote_user: "{{ user }}"
 
-  vars:
-    example: example
-
   roles:
     - role: common
       tags: common
