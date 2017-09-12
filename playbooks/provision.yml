@@ -16,8 +16,8 @@
       tags: postgresql
 
     # Install npm and less CSS
-    - role: npm
-      tags: npm
+    - role: nodejs
+      tags: nodejs
 
     # # Python dependencies listed in the requirements.txt file
     - role: pythonenv
