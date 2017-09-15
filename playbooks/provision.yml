@@ -16,6 +16,3 @@
     - role: nodejs
       tags: nodejs
 
-    # # Python dependencies listed in the requirements.txt file
-    - role: pythonenv
-      tags: pythonenv
