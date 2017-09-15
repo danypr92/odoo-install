@@ -1,4 +1,4 @@
-# Ansible scripts to provision server for Odoo
+# Ansible scripts to provision and deploy Odoo
 
 These are [Ansible](http://docs.ansible.com/ansible/) playbooks (scripts) for managing an [Odoo](https://github.com/odoo/odoo) server.
 
@@ -11,6 +11,22 @@ Run:
 
 * `provision.yml` - Install and configure all required software on the server.
 
+### Provision
+
+- Install common packages
+- Install PostgreSQL database and create a user
+- Install NodeJS and LESS
+
+* `deploy.yml` - Deploy source code from Odoo Nightly and install Python requirements.
+
+### Deploy
+
+- Install and create VirtualEnv
+- Ansistrano deploy:
+  - Download the source code
+  - Before link task: Build
+  - Before link task: Install requirements.txt
+- Add systemd service
 
 ## Requirements
 
@@ -21,7 +37,7 @@ It has currently been tested on **Ubuntu 16.04 Xenial (64 bit)**.
 
 If you like run the `lxc-create` script, you need install [LXC](https://linuxcontainers.org/).
 
-## Using LXC containers
+## Development - Using LXC containers
 
 You can need a local container to test your customizations.
 `lxc/lxc-create.sh` script creates a container, gets IP address of the new container and creates a known host whit this IP address.
