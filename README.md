@@ -10,14 +10,14 @@ Run:
 ## Playbooks
 
 ### Provision
-* `provision.yml` - Install and configure all required software on the server.
+`provision.yml` - Install and configure all required software on the server.
 
 - Install common packages
 - Install PostgreSQL database and create a user
 - Install NodeJS and LESS
 
 ### Deploy
-* `deploy.yml` - Deploy source code from Odoo Nightly and install Python requirements.
+`deploy.yml` - Deploy source code from Odoo Nightly and install Python requirements.
 
 - Install and create VirtualEnv
 - Ansistrano deploy:
