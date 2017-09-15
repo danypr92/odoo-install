@@ -1,5 +1,5 @@
 [lxc]
-local.odoo.org
+local.odoo.net
 
 [odoo_servers:children]
 lxc
