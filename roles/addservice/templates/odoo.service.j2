@@ -1,0 +1,20 @@
+# Odoo systemd service
+
+[Unit]
+Description=Odoo server
+
+[Service]
+ExecStart={{ ansible_env.HOME }}/odoo-venv/bin/python {{ ansible_env.HOME }}/apps/odoo/current/build/scripts-2.7/odoo
+
+# Execute service like user
+User={{ user }}
+Group={{ user }}
+
+# Restart service after all crashes but wait 5 secontds between restarts.
+Restart=always
+RestartSec=5
+
+# output stdout and stderr to syslog. (/var/log/messages)
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=odoo
