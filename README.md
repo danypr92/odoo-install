@@ -9,6 +9,13 @@ Run:
 
 ## Playbooks
 
+### Default User
+`default_user.yml` - Create default user (odoo) with sudo permisses to install and run the app.
+
+- Create _user
+- Add ssh keys
+- Add sudo permisses
+
 ### Provision
 `provision.yml` - Install and configure all required software on the server.
 
