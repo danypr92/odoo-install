@@ -1,0 +1,10 @@
+---
+# Add your ssh public key in pub_keys folder and add it to this list
+# exemple:                        | Your name
+#   file: ../pub_keys/example.pub | Key file path
+#   state: present                | present to add or absent (absent to remove authorized key)
+
+ssh_keys:
+  dani:
+    key: ../pub_keys/dani.pub
+    state: present

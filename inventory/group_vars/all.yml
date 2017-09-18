@@ -1,7 +1,7 @@
 ---
 
 # User name and password for running ansible on host
-user: ubuntu
+user: odoo
 
 
 # Use correct python2.7 interpeter
