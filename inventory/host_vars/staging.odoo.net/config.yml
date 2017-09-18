@@ -5,6 +5,6 @@
 #   state: present                | present to add or absent (absent to remove authorized key)
 
 ssh_keys:
-  default:
-    key: "{{ lookup('env', 'HOME' ) }}/.ssh/id_rsa.pub"
+  dani:
+    key: ../pub_keys/dani.pub
     state: present
