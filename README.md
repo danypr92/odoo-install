@@ -33,6 +33,21 @@ Run:
   - Before link task: Install requirements.txt
 - Add systemd service
 
+### Deploy Custom Modules
+`deploy_custom_modules.yml` - Deploy the custom or thirdy part modules needed.
+
+You can do a repository with your module repository like a submoduls. [Like in this example](https://github.com/danypr92/odoo-organization-custom-modules)
+
+Put custom modules repository url in your inventory/host_vars/your_host/config.yml file:
+
+```YAML
+custom_modules_repo: https://github.com/danypr92/odoo-organization-custom-modules.git
+custom:modules_repo_branch: master
+```
+
+- Ansistrano git deploy.
+- Update odoo.service to add addons.
+
 ## Requirements
 
 You will need Ansible on your machine to run the playbooks.

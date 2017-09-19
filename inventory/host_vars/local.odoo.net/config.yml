@@ -8,3 +8,6 @@ ssh_keys:
   default:
     key: "{{ lookup('env', 'HOME' ) }}/.ssh/id_rsa.pub"
     state: present
+
+custom_modules_repo: https://github.com/danypr92/odoo-organization-custom-modules.git
+custom_modules_repo_brach: master
