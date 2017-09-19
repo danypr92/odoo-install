@@ -34,9 +34,9 @@ Run:
 - Add systemd service
 
 ### Deploy Custom Modules
-`deploy_custom_modules.yml` - Deploy the custom or thirdy part modules needed.
+`deploy_custom_modules.yml` - Deploy the custom or thirdy part modules that you need.
 
-You can do a repository with your module repository like a submoduls. [Like in this example](https://github.com/danypr92/odoo-organization-custom-modules)
+You can make a repository with submodules pointing your module repository. [Like in this example](https://github.com/danypr92/odoo-organization-custom-modules)
 
 Put custom modules repository url in your inventory/host_vars/your_host/config.yml file:
 
