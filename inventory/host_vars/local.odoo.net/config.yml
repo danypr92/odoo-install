@@ -10,4 +10,5 @@ ssh_keys:
     state: present
 
 custom_modules_repo: https://github.com/danypr92/odoo-organization-custom-modules.git
-custom_modules_repo_brach: master
+custom_modules_repo_branch: master
+log_path: /var/log/odoo/odoo.log

@@ -22,4 +22,6 @@
         tags: ansistrano::deploy
       
       - role: addservice
+        vars:
+          status: create
         tags: addservice

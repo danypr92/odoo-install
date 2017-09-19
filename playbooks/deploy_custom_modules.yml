@@ -16,3 +16,8 @@
   roles:
     - role: carlosbuenosvinos.ansistrano-deploy
       tags: ansistrano::custom-modules-deploy
+
+    - role: addservice
+      vars:
+        status: update
+      tags: "addservice::update"
