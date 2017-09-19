@@ -48,6 +48,8 @@ custom:modules_repo_branch: master
 - Ansistrano git deploy.
 - Update odoo.service to add addons.
 
+### All
+`all.yml` - Include all other playbooks
 ## Requirements
 
 You will need Ansible on your machine to run the playbooks.
