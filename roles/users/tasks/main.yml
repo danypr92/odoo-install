@@ -6,7 +6,7 @@
     append=yes
     state="{{ item.value.state }}"
     shell=/bin/bash
-  with_dict: "{{ ssh_keys }}"
+  with_dict: "{{ users }}"
 
 - name: ssh keys
   authorized_key:
@@ -14,7 +14,7 @@
     key="{{ lookup('file', item.value.key) }}"
     state={{ item.value.state }}
   when: item.value.state == "present"
-  with_dict: "{{ ssh_keys }}"
+  with_dict: "{{ users }}"
 
 - name: add custom sudoer file
   template:
@@ -22,4 +22,4 @@
     dest="/etc/sudoers.d/90-{{ item.key }}"
     mode=0440
   when: item.value.state == "present"
-  with_dict: "{{ ssh_keys }}"
+  with_dict: "{{ users }}"
