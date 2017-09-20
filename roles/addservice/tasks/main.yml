@@ -12,6 +12,14 @@
 - name: Create log dir "{{ log_path }}"
   file:
     path: "{{ log_path }}"
+    state: directory
+    mode: 0777
+  become: yes
+  when: status == "create"
+
+- name: Create log file "{{ log_path }}"
+  file:
+    path: "{{ log_path }}/odoo.log"
     state: touch
     mode: 0777
   become: yes
