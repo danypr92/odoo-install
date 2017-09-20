@@ -9,10 +9,26 @@ Run:
 
 ## Playbooks
 
-### Default User
-`default_user.yml` - Create default user (odoo) with sudo permisses to install and run the app.
+### Users
+`users.yml` - Create users defined in your `inventory/host_vars/YOUR_HOST/conf.yml`. The structure to declare user is:
 
-- Create _user
+```ỲAML
+users:
+  odoo:
+    key: "{{ lookup('env', 'HOME' ) }}/.ssh/id_rsa.pub"
+    state: present
+    group:
+  user1:
+    key: ../pub_keys/user1.pub
+    state: present
+    group: odoo
+```
+
+Use `state: absent` to remove a user.
+
+The user `odoo` always is needed. All other users need acces to odoo group to manage the system service.
+
+- Create user
 - Add ssh keys
 - Add sudo permisses
 
