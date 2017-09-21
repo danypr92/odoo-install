@@ -1,4 +1,11 @@
 --- # Setup a default user - needs to be run as root.
+- name: create default_user
+  user:
+    name=odoo
+    append=yes
+    state=present
+    shell=/bin/bash
+
 - name: create users
   user:
     name="{{ item.key }}"
