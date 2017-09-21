@@ -17,5 +17,5 @@
 
 - name: create node sym link
   become: yes
-  shell: sudo ln -s /usr/bin/nodejs /usr/bin/node
+  shell: sudo ln -sf /usr/bin/nodejs /usr/bin/node
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_version != '14.04'
