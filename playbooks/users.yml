@@ -1,9 +1,0 @@
----
-# Add all users defined in host var.
-- name: Manage users
-  hosts: odoo_servers
-  remote_user: root
-  roles:
-    - role: users
-      become: yes
-      tags: users
